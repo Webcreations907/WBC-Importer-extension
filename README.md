@@ -3,6 +3,8 @@ One Click Multi Demo Content Importer Extension for [ReduxFramework](https://git
 
 This is a modified version of [Radium Importer](https://github.com/FrankM1/radium-one-click-demo-install) to work as a extension for ReduxFramework and support multiple demo imports.
 
+![alt tag](https://cloud.githubusercontent.com/assets/8421576/5591231/263fdfce-90fc-11e4-8d45-8631349bd375.jpg)
+
 ## Steps ##
 __1__- Download code from this repo, unzip and place ```wbc_importer``` folder into your Redux [extensions directory](http://reduxframework.com/docs/extensions-loader/ "Redux Documentation"). 
 _After this you should see the demo importer load in your Theme Options panel with a few examples showing._
