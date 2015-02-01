@@ -3,6 +3,7 @@ One Click Multi Demo Content Importer Extension for [ReduxFramework](https://git
 
 This is a modified version of [Radium Importer](https://github.com/FrankM1/radium-one-click-demo-install) to work as a extension for ReduxFramework and support multiple demo imports.
 
+##### Preview Image #####
 ![alt tag](https://cloud.githubusercontent.com/assets/8421576/5591231/263fdfce-90fc-11e4-8d45-8631349bd375.jpg)
 
 ## Steps ##
