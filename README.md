@@ -20,7 +20,7 @@ __6__- Create a ```320x240``` screenshot image called ```screen-image.jpg```, su
 __7__- __That's All!__ Repeat steps __2-6__ for each demo content set/import you want.
 
 ### Example Functions/Filters. ###
-Check ```example-functions.php``` file from this repo.
+Check [example-functions.php](https://github.com/Webcreations907/WBC-Importer-extension/blob/master/example-functions.php) file from this repo which also contains a example of how import RevSlider, Set Menus, and Set Home Page.
 
 ### Show Some Love ###
 Promoting the people that made this extension possible. :)
