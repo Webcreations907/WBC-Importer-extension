@@ -8,7 +8,7 @@
  *
  * @package     WBC_Importer - Extension for Importing demo content
  * @author      Webcreations907
- * @version     1.0
+ * @version     1.0.1
  */
 
 // Exit if accessed directly
@@ -21,7 +21,7 @@ if ( !class_exists( 'ReduxFramework_extension_wbc_importer' ) ) {
 
         public static $instance;
 
-        static $version = "1.0";
+        static $version = "1.0.1";
 
         protected $parent;
 
@@ -180,6 +180,12 @@ if ( !class_exists( 'ReduxFramework_extension_wbc_importer' ) ) {
             }
             if ( isset( $_REQUEST['type'] ) && $_REQUEST['type'] == "import-demo-content" && array_key_exists( $_REQUEST['demo_import_id'], $this->wbc_import_files ) ) {
 
+                $reimporting = false;
+
+                if( isset( $_REQUEST['wbc_import'] ) && $_REQUEST['wbc_import'] == 're-importing'){
+                    $reimporting = true;
+                }
+
                 $this->active_import_id = $_REQUEST['demo_import_id'];
 
                 $import_parts         = $this->wbc_import_files[$this->active_import_id];
@@ -191,7 +197,7 @@ if ( !class_exists( 'ReduxFramework_extension_wbc_importer' ) ) {
 
                 if ( file_exists( $demo_data_loc.'/'.$import_parts['content_file'] ) && is_file( $demo_data_loc.'/'.$import_parts['content_file'] ) ) {
 
-                    if ( !isset( $import_parts['imported'] ) ) {
+                    if ( !isset( $import_parts['imported'] ) || true === $reimporting ) {
                         include $this->extension_dir.'inc/init-installer.php';
                         $installer = new Radium_Theme_Demo_Data_Importer( $this, $this->parent );
                     }else {

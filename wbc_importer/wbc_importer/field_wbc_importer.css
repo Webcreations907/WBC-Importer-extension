@@ -26,6 +26,19 @@
     width: auto;
 }
 
+.wbc_importer .importer-button{
+    margin-top:0;
+}
+
+.wbc_importer #wbc-importer-reimport{
+    margin-left:4px;
+    display: none;
+}
+
+.wbc_importer .theme-browser .theme:hover #wbc-importer-reimport{
+    display: inline-block;
+}
+
 .wbc-importer-info{
     background-color: #fff;
     border-left: 4px solid orange;

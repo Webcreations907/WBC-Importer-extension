@@ -8,7 +8,7 @@
  *
  * @package     WBC_Importer - Extension for Importing demo content
  * @author      Webcreations907
- * @version     1.0
+ * @version     1.0.1
  */
 
 // Exit if accessed directly
@@ -96,7 +96,7 @@ if ( !class_exists( 'ReduxFramework_wbc_importer' ) ) {
                         $extra_class = 'active imported';
                         $import_message = esc_html__( 'Demo Imported', 'framework' );
                     }
-                    echo '<div class="wrap-importer theme '.$extra_class.'" data-demo-id="'.esc_attr( $section ).'" >';
+                    echo '<div class="wrap-importer theme '.$extra_class.'" data-demo-id="'.esc_attr( $section ).'"  data-nonce="' . $nonce . '" id="' . $this->field['id'] . '-custom_imports">';
 
                     echo '<div class="theme-screenshot">';
 
@@ -111,9 +111,11 @@ if ( !class_exists( 'ReduxFramework_wbc_importer' ) ) {
 
                     echo '<div class="theme-actions">';
                     if ( false == $imported ) {
-                        echo '<div class="import_button_div"><span class="spinner">'.esc_html__( 'Please Wait...', 'framework' ).'</span><span class="button-primary import-demo-data" data-nonce="' . $nonce . '" id="' . $this->field['id'] . '-custom_imports">' . __( 'Import Demo', 'framework' ) . '</span></div>';
+                        echo '<div class="wbc-importer-buttons"><span class="spinner">'.esc_html__( 'Please Wait...', 'framework' ).'</span><span class="button-primary importer-button import-demo-data">' . __( 'Import Demo', 'framework' ) . '</span></div>';
                     }else {
-                        echo '<div class="import_button_div button-secondary">'.esc_html__( 'Imported', 'framework' ).'</div>';
+                        echo '<div class="wbc-importer-buttons button-secondary importer-button">'.esc_html__( 'Imported', 'framework' ).'</div>';
+                        echo '<span class="spinner">'.esc_html__( 'Please Wait...', 'framework' ).'</span>';
+                        echo '<div id="wbc-importer-reimport" class="wbc-importer-buttons button-primary import-demo-data importer-button">'.esc_html__( 'Re-Import', 'framework' ).'</div>';
                     }
                     echo '</div>';
                     echo '</div>';

@@ -8,7 +8,7 @@
  *
  * @package     WBC_Importer - Extension for Importing demo content
  * @author      Webcreations907
- * @version     1.0
+ * @version     1.0.1
  */
 
 // Exit if accessed directly
