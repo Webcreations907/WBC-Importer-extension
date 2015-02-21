@@ -1,6 +1,8 @@
 ## WBC_Importer Extension - One Click Demo Importer ##
 One Click Multi Demo Content Importer Extension for [ReduxFramework](https://github.com/ReduxFramework/redux-framework)
 
+For issues or questions please post in [issues](https://github.com/Webcreations907/WBC-Importer-extension/issues) here and __not__ on Reduxframework issue tracker. Thanks :smile:
+
 This is a modified version of [Radium Importer](https://github.com/FrankM1/radium-one-click-demo-install) to work as a extension for ReduxFramework and support multiple demo imports.
 
 ##### Preview Image #####
