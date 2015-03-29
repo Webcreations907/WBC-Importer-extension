@@ -1,6 +1,7 @@
 <?php
 /**
  * Extension-Boilerplate
+ *
  * @link https://github.com/ReduxFramework/extension-boilerplate
  *
  * Radium Importer - Modified For ReduxFramework
@@ -8,7 +9,7 @@
  *
  * @package     WBC_Importer - Extension for Importing demo content
  * @author      Webcreations907
- * @version     1.0.1
+ * @version     1.0.2
  */
 
 // Exit if accessed directly
@@ -21,7 +22,7 @@ if ( !class_exists( 'ReduxFramework_extension_wbc_importer' ) ) {
 
         public static $instance;
 
-        static $version = "1.0.1";
+        static $version = "1.0.2";
 
         protected $parent;
 
@@ -93,6 +94,47 @@ if ( !class_exists( 'ReduxFramework_extension_wbc_importer' ) ) {
 
         }
 
+        /**
+         * Get the demo folders/files
+         * Provided fallback where some host require FTP info
+         *
+         * @return array list of files for demos
+         */
+        public function demoFiles() {
+
+            $this->filesystem = $this->parent->filesystem->execute( 'object' );
+            $dir_array = $this->filesystem->dirlist( $this->demo_data_dir, false, true );
+
+            if ( !empty( $dir_array ) && is_array( $dir_array ) ) {
+
+                return $dir_array;
+
+            }else{
+
+                $dir_array = array();
+
+                $demo_directory = array_diff( scandir( $this->demo_data_dir ), array( '..', '.' ) );
+
+                if ( !empty( $demo_directory ) && is_array( $demo_directory ) ) {
+                    foreach ( $demo_directory as $key => $value ) {
+                        if ( is_dir( $this->demo_data_dir.$value ) ) {
+
+                            $dir_array[$value] = array( 'name' => $value, 'type' => 'd', 'files'=> array() );
+
+                            $demo_content = array_diff( scandir( $this->demo_data_dir.$value ), array( '..', '.' ) );
+
+                            foreach ( $demo_content as $d_key => $d_value ) {
+                                if ( is_file( $this->demo_data_dir.$value.'/'.$d_value ) ) {
+                                    $dir_array[$value]['files'][$d_value] = array( 'name'=> $d_value, 'type' => 'f' );
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return $dir_array;
+        }
+
 
         public function getImports() {
 
@@ -100,13 +142,11 @@ if ( !class_exists( 'ReduxFramework_extension_wbc_importer' ) ) {
                 return $this->wbc_import_files;
             }
 
-            $this->filesystem = $this->parent->filesystem->execute( 'object' );
-
-            $imports = $this->filesystem->dirlist( $this->demo_data_dir, false, true );
+            $imports = $this->demoFiles();
 
             $imported = get_option( 'wbc_imported_demos' );
 
-            if ( !empty( $imports ) ) {
+            if ( !empty( $imports ) && is_array( $imports ) ) {
                 $x = 1;
                 foreach ( $imports as $import ) {
 
@@ -182,7 +222,7 @@ if ( !class_exists( 'ReduxFramework_extension_wbc_importer' ) ) {
 
                 $reimporting = false;
 
-                if( isset( $_REQUEST['wbc_import'] ) && $_REQUEST['wbc_import'] == 're-importing'){
+                if ( isset( $_REQUEST['wbc_import'] ) && $_REQUEST['wbc_import'] == 're-importing' ) {
                     $reimporting = true;
                 }
 
