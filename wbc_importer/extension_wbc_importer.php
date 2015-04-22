@@ -106,7 +106,8 @@ if ( !class_exists( 'ReduxFramework_extension_wbc_importer' ) ) {
             $dir_array = $this->filesystem->dirlist( $this->demo_data_dir, false, true );
 
             if ( !empty( $dir_array ) && is_array( $dir_array ) ) {
-
+               
+                uksort( $dir_array, 'strcasecmp' );
                 return $dir_array;
 
             }else{
@@ -130,6 +131,8 @@ if ( !class_exists( 'ReduxFramework_extension_wbc_importer' ) ) {
                             }
                         }
                     }
+
+                    uksort( $dir_array, 'strcasecmp' );
                 }
             }
             return $dir_array;
