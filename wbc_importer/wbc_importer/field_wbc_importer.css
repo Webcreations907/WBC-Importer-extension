@@ -24,6 +24,8 @@
     padding-right: 25px;
     padding-top: 5px;
     width: auto;
+    visibility: visible;
+    display: none;
 }
 
 .wbc_importer .importer-button{
