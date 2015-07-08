@@ -265,7 +265,7 @@ if ( !class_exists( 'ReduxFramework_extension_wbc_importer' ) ) {
 
         function add_importer_section() {
             // Checks to see if section was set in config of redux.
-            for ( $n = 0; $n < count( $this->parent->sections ); $n++ ) {
+            for ( $n = 0; $n <= count( $this->parent->sections ); $n++ ) {
                 if ( isset( $this->parent->sections[$n]['id'] ) && $this->parent->sections[$n]['id'] == 'wbc_importer_section' ) {
                     return;
                 }
