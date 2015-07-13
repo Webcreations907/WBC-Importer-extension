@@ -11,12 +11,13 @@
     max-width: none !important;
     width:100% !important;
 }
-.wbc_importer .theme-browser .theme:focus .more-details, 
+.wbc_importer .theme-browser .theme:focus .more-details,
 .wbc_importer .theme-browser .theme:hover .more-details {
     opacity: 1;
 }
 
 .wbc_importer .theme-browser .theme .spinner {
+    display: none; /*UI fix after WP 4.2*/
     background-position: right center;
     font-size: 12px;
     height: 20px;
@@ -24,8 +25,6 @@
     padding-right: 25px;
     padding-top: 5px;
     width: auto;
-    visibility: visible;
-    display: none;
 }
 
 .wbc_importer .importer-button{
