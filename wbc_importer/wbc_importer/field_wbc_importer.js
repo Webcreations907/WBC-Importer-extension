@@ -36,7 +36,12 @@
                 parent.removeClass('active imported').addClass('not-imported');
             }
 
-            parent.find('.spinner').css('display', 'inline-block');
+            parent.find('.spinner').css({
+
+                'display': 'inline-block',
+                'visibility': 'inherit'
+
+                });
 
             parent.removeClass('active imported');
 
