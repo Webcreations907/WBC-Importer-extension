@@ -91,6 +91,9 @@ if ( !class_exists( 'ReduxFramework_extension_wbc_importer' ) ) {
             //Adds Importer section to panel
             $this->add_importer_section();
 
+            include $this->extension_dir.'inc/class-wbc-importer-progress.php';
+            $wbc_progress = new Wbc_Importer_Progress( $this->parent );
+
 
         }
 
