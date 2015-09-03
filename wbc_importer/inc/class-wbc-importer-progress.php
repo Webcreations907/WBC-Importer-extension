@@ -90,7 +90,7 @@ if ( !class_exists( 'Wbc_Importer_Progress' ) ) {
 			);
 
 
-			$this->total_posts = $count_post;
+			// $this->total_posts = $count_post;
 
 			update_option( 'wbc_import_progress',  $progress_array );
 
