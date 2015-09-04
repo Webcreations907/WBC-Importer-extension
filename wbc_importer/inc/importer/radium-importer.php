@@ -233,7 +233,7 @@ if ( !class_exists( 'Radium_Theme_Importer' ) ) {
           echo "The XML file containing the dummy content is not available or could not be read .. You might want to try to set the file permission to chmod 755.<br/>If this doesn't work please use the Wordpress importer and import the XML file (should be located in your download .zip: Sample Content folder) manually ";
 
         } else {
-
+          @set_time_limit(0);
           $wp_import = new WP_Import();
           $wp_import->fetch_attachments = true;
           $wp_import->import( $file );

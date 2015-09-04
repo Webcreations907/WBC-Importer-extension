@@ -100,20 +100,25 @@
                 data.action = "redux_wbc_importer_progress";
 
                 if(imported_demo == false){
-                    jQuery.post(ajaxurl, data, function(response) {
-                        var obj = jQuery.parseJSON(response);
-                        if (response.length > 0 && typeof obj == 'object'){
-                            var percentage = Math.floor((obj.imported_count / obj.total_post ) * 100);
+                    
+                    jQuery.ajax({
+                        url: ajaxurl,
+                        data: data,
+                        success:function(response){
+                            var obj = jQuery.parseJSON(response);
+                            if (response.length > 0 && typeof obj == 'object'){
+                                var percentage = Math.floor((obj.imported_count / obj.total_post ) * 100);
 
-                            percentage = (percentage > 0) ? percentage - 1 : percentage;
-                            parent.find('.wbc-progress-bar').css('width',percentage+"%");
-                            parent.find('.wbc-progress-count').text(percentage+"%");
-                            setTimeout(function(){
-                                wbc_show_progress(data);
-                            },2000);
+                                percentage = (percentage > 0) ? percentage - 1 : percentage;
+                                parent.find('.wbc-progress-bar').css('width',percentage+"%");
+                                parent.find('.wbc-progress-count').text(percentage+"%");
+                                setTimeout(function(){
+                                    wbc_show_progress(data);
+                                },2000);
+                            }
                         }
-                        
                     });
+
                 }else{
                     parent.find('.wbc-progress-back').remove();
                 }
