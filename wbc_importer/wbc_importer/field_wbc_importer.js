@@ -70,6 +70,7 @@
                     parent.addClass('imported active').removeClass('not-imported');
                     imported_demo = true;
                     wbc_show_progress(data);
+                    location.reload(true);
                 } else {
                     parent.find('.import-demo-data').show();
 
