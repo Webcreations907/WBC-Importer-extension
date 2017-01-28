@@ -39,7 +39,7 @@ if ( !class_exists( 'ReduxFramework_wbc_importer' ) ) {
             $class = ReduxFramework_extension_wbc_importer::get_instance();
 
             if ( !empty( $class->demo_data_dir ) ) {
-                $this->demo_data_dir = $class->demo_data_dir;
+                $this->demo_data_dir = trailingslashit( str_replace( '\\', '/',  $class->demo_data_dir ) );
                 $this->demo_data_url = site_url( str_replace( trailingslashit( str_replace( '\\', '/', ABSPATH ) ), '', $this->demo_data_dir ) );
             }
 
