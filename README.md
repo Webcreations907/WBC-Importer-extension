@@ -1,3 +1,5 @@
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=J79X6ZMJHRMLC)
+
 ## WBC_Importer Extension - One Click Demo Importer ##
 One Click Multi Demo Content Importer Extension for [ReduxFramework](https://github.com/ReduxFramework/redux-framework)
 
@@ -27,8 +29,11 @@ __7__- __That's All!__ Repeat steps __2-6__ for each demo content set/import you
 ### Example Functions/Filters. ###
 Check [example-functions.php](https://github.com/Webcreations907/WBC-Importer-extension/blob/master/example-functions.php) file from this repo which also contains a example of how import RevSlider, Set Menus, and Set Home Page.
 
+### Wanna Donate? ###
+If you find this extension useful and would like to donate, buy me a coffee, redbull, etc you can donate [HERE](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=J79X6ZMJHRMLC "Donate via Paypal"). Thanks :smile:
+
 ### Show Some Love ###
-Promoting the people that made this extension possible. :)
+Promoting the other people that made this extension possible. :)
 
 __FrankM1__: 
 - [Radium Themes](http://themes.radiumthemes.com/)
