@@ -1,5 +1,3 @@
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=J79X6ZMJHRMLC)
-
 ## WBC_Importer Extension - One Click Demo Importer ##
 One Click Multi Demo Content Importer Extension for [ReduxFramework](https://github.com/ReduxFramework/redux-framework)
 
