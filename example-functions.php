@@ -223,14 +223,32 @@ if ( !function_exists( 'wbc_extended_example' ) ) {
 			$wbc_sliders_array = array(
 				'demo3' => 'someslidername.zip', //Set slider zip name
 				'demo5' => 'anotherslider.zip', //Set slider zip name
+				'demo6' => array('anotherslider.zip','anotherslider2.zip'), //if we need multiple slider for same demo ,set slider zip name
 			);
-
+			//if there is multiple slider in array
 			if ( isset( $demo_active_import[$current_key]['directory'] ) && !empty( $demo_active_import[$current_key]['directory'] ) && array_key_exists( $demo_active_import[$current_key]['directory'], $wbc_sliders_array ) ) {
 				$wbc_slider_import = $wbc_sliders_array[$demo_active_import[$current_key]['directory']];
 
-				if ( file_exists( $demo_directory_path.$wbc_slider_import ) ) {
-					$slider = new RevSlider();
-					$slider->importSliderFromPost( true, true, $demo_directory_path.$wbc_slider_import );
+				if(is_array($wbc_sliders_array[$demo_active_import[$current_key]['directory']])) {
+
+						foreach ($wbc_sliders_array[$demo_active_import[$current_key]['directory']] as $key => $value) {
+
+							$wbc_slider_import = $value;
+
+							if ( file_exists( $demo_directory_path.$wbc_slider_import ) ) {
+								$slider = new RevSlider();
+								$slider->importSliderFromPost( true, true, $demo_directory_path.$wbc_slider_import );
+							}
+
+						}
+					}
+				else{
+					$wbc_slider_import = $wbc_sliders_array[$demo_active_import[$current_key]['directory']];
+
+					if ( file_exists( $demo_directory_path.$wbc_slider_import ) ) {
+						$slider = new RevSlider();
+						$slider->importSliderFromPost( true, true, $demo_directory_path.$wbc_slider_import );
+					}
 				}
 			}
 		}
