@@ -70,6 +70,10 @@
 
 .wbc_importer .theme-actions{
    opacity: 1 !important;
+   top: auto !important;
+   bottom: 0;
+   -webkit-transform: translateY(0) !important;
+   transform: translateY(0) !important;
 }
 
 .wbc_importer .theme-browser .theme .theme-screenshot img{
