@@ -38,15 +38,15 @@ if ( !class_exists( 'ReduxFramework_wbc_importer' ) ) {
 
             $class = ReduxFramework_extension_wbc_importer::get_instance();
 
-            if ( !empty( $class->demo_data_dir ) ) {
-                $this->demo_data_dir = trailingslashit( str_replace( '\\', '/',  $class->demo_data_dir ) );
-                $this->demo_data_url = site_url( str_replace( trailingslashit( str_replace( '\\', '/', ABSPATH ) ), '', $this->demo_data_dir ) );
-            }
+          if ( !empty( $class->demo_data_dir ) ) {
+            $this->demo_data_dir = trailingslashit( str_replace( '\\', '/',  $class->demo_data_dir ) );
+            $this->demo_data_url = content_url( str_replace( trailingslashit( str_replace( '\\', '/', Redux_Helpers::cleanFilePath( WP_CONTENT_DIR ) ) ), '', $this->demo_data_dir ) );
+          }
 
-            if ( empty( $this->extension_dir ) ) {
-                $this->extension_dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
-                $this->extension_url = site_url( str_replace( trailingslashit( str_replace( '\\', '/', ABSPATH ) ), '', $this->extension_dir ) );
-            }
+          if ( empty( $this->extension_dir ) ) {
+            $this->extension_dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
+            $this->extension_url = content_url( str_replace( trailingslashit( str_replace( '\\', '/', Redux_Helpers::cleanFilePath( WP_CONTENT_DIR ) ) ), '', $this->extension_dir ) );
+          }
         }
 
         /**

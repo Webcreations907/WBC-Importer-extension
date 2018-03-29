@@ -61,7 +61,7 @@ if ( !class_exists( 'ReduxFramework_extension_wbc_importer' ) ) {
 
             if ( empty( $this->extension_dir ) ) {
                 $this->extension_dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
-                $this->extension_url = site_url( str_replace( trailingslashit( str_replace( '\\', '/', ABSPATH ) ), '', $this->extension_dir ) );
+                $this->extension_url = content_url( str_replace( trailingslashit( str_replace( '\\', '/', Redux_Helpers::cleanFilePath( WP_CONTENT_DIR ) ) ), '', $this->extension_dir ) );
                 $this->demo_data_dir = apply_filters( "wbc_importer_dir_path", $this->extension_dir . 'demo-data/' );
             }
 
